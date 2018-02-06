@@ -24,9 +24,10 @@ public class IndexController {
     }
 
     @PostMapping(path = {"/"})
-    public ModelAndView indexAction() {
+    public ModelAndView indexAction( @Autowired @Qualifier("${name}") MyInterface inter ) {
         return new ModelAndView("index")
-                .addObject("sent",true);
+                .addObject("sent",true)
+                .addObject( "name" , inter.getName() );
     }
 
 }
