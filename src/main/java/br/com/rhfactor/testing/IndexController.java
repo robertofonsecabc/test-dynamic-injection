@@ -13,6 +13,7 @@ public class IndexController {
 
 
     @Autowired
+    @Qualifier("two")
     private MyInterface myInterface;
 
     @GetMapping(path = {"/"})
