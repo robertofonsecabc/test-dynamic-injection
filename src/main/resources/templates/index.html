@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.rhfactor.com.br/themes/test"
+>
+<body>
+
+<th:block layout:fragment="content">
+
+    <div th:if="${name}" th:text="${name}">Name Here</div>
+
+    <form role="form" id="sign_up_form" th:action="@{'/'}"  th:method="post">
+
+        <select th:id="qualifier" th:method="post">
+            <option value="one">One</option>
+            <option value="two">Two</option>
+        </select>
+
+        <input th:type="submit" />
+
+        <div th:if="${sent}">Form submited!</div>
+
+    </form>
+
+</th:block>
+
+
+</body>
+</html>
